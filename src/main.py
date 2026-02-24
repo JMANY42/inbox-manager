@@ -1,0 +1,34 @@
+from elearning import assignment_due_soon
+
+def preliminary_sort(message):
+    subject = message["subject"]
+    sender_email = message["sender"]["emailAddress"]["address"]
+
+    # Sort by email type for future processes
+    if sender_email == 'eLearning-Notification@utdallas.edu' and 'due soon' in subject:
+        assignment_due_soon(message)
+    
+    elif sender_email == 'no-reply@notify.cloudflare.com' and '[Alert] Tunnel APT_Server' in subject:
+        pass # LOWK NOT SURE WHAT TO DO MAYBE JUST FLAG AS IMPORTANT
+    
+    else:
+        pass # GENERAL CASE EMAIL
+
+
+def main():
+    preliminary_sort({
+        "subject": "Lab 1: Post-Lab Report Turn-In is due soon in CS 4141.HON - Digital Systems Laboratory - S26",
+        "sender": {
+                "emailAddress": {
+                    "name": "eLearning-Notification@utdallas.edu",
+                    "address": "eLearning-Notification@utdallas.edu"
+                }
+            },
+        "body": {
+                "contentType": "html",
+                "content": "<html><head>\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><style type=\"text/css\">\r\n<!--\r\nimg\r\n\t{max-width:600px;\r\n\toutline:none;\r\n\ttext-decoration:none}\r\na\r\n\t{text-decoration:underline;\r\n\tborder:0;\r\n\toutline:none}\r\na img\r\n\t{border:none}\r\ntd\r\n\t{text-align:center}\r\nbody\r\n\t{width:100%;\r\n\theight:100%;\r\n\tbackground:#ffffff;\r\n\tfont-size:14px;\r\n\tfont-family:'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif}\r\ntable, td\r\n\t{}\r\n#user-defined-description table\r\n\t{border:1px solid #cdcdcd;\r\n\tborder-collapse:collapse;\r\n\twidth:100%;\r\n\ttable-layout:fixed}\r\n#user-defined-description td, th\r\n\t{border:1px solid #cdcdcd;\r\n\tpadding:12px}\r\n#user-defined-description th\r\n\t{background:#f8f8f8}\r\n-->\r\n</style></head><body class=\"body\" bgcolor=\"#ffffff\" style=\"padding:0; margin:0; display:block; background:#ffffff\"><table align=\"center\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" height=\"100%\" role=\"presentation\" style=\"max-width:600px; background-color:#ffffff; border-spacing:0; padding:0\"><tbody><tr role=\"presentation\" style=\"padding:0\"><td align=\"center\" valign=\"top\" bgcolor=\"#ffffff\" width=\"100%\" role=\"presentation\" style=\"padding:0\"><center><table cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"margin:57px auto; border-spacing:0; padding:0\"><tbody><tr role=\"presentation\" style=\"padding:0\"><td align=\"center\" valign=\"top\" width=\"800px\" role=\"presentation\" style=\"padding:40px 27px 40px 27px; background-color:#ffffff; border:3px solid #f8f8f8\"><table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" role=\"presentation\" style=\"border-spacing:0; padding:0\"><tbody><tr role=\"presentation\"><td role=\"presentation\" style=\"text-align:center; padding:0 0 12px 0\"><font face=\"'Open Sans', Helvetica, Arial, sans-serif\"><div style=\"display:block\"><span style=\"font-size:14px; font-weight:bold; color:#666666; line-height:1.5\">2262-UTDAL-CS-4141-SECHON-23961 </span><br><span style=\"font-size:18px; font-weight:normal; color:#666666; line-height:1.5\">CS 4141.HON - Digital Systems Laboratory - S26 </span></div></font></td></tr><tr role=\"presentation\"><td role=\"presentation\" style=\"padding:0 0 24px 0\"><div style=\"text-align:center\"><font face=\"'Open Sans', Helvetica, Arial, sans-serif\"><span style=\"font-size:18px; font-weight:600; line-height:1.4; display:block\">Assignment due soon </span></font></div></td></tr><tr role=\"presentation\"><td role=\"presentation\" style=\"padding:0\"><table width=\"100%\" role=\"presentation\"><tbody><tr role=\"presentation\"><td role=\"presentation\" style=\"padding:0\"><div style=\"padding:0 35px; text-align:center; line-height:1.5\"><font face=\"'Open Sans', Helvetica, Arial, sans-serif\"><span style=\"font-size:14px; font-weight:600\">Lab 1: Post-Lab Report Turn-In </span></font><br><font face=\"'Open Sans', Helvetica, Arial, sans-serif\"><span style=\"font-size:14px; font-weight:normal; color:#666666\">Due Thursday, February 26, 2026 11:59:00 PM CST </span></font></div></td></tr></tbody></table></td></tr><tr role=\"presentation\"><td role=\"presentation\" style=\"padding:20px 0 0 0\"><div style=\"text-align:center\"><font face=\"'Open Sans', Helvetica, Arial, sans-serif\"><a href=\"https://elearning.utdallas.edu/webapps/login/?action=login&amp;new_loc=%2Fultra%2Fredirect%3FredirectType%3Dnautilus%26legacyUrl%3D%252Fwebapps%252Fblackboard%252Fexecute%252Fnautilus%252FnotificationResponse%253Faction%253Ddispatch%2526userId%253D_696995_1%2526courseId%253D_404039_1%2526contentId%253D_9582369_1%2526sourceId%253D_2533222_1%25257Cblackboard.platform.gradebook2.GradableItem%2526parentId%253Dnull%2526sourceType%253DAS%2526eventType%253DDUE%26courseId%3D_404039_1%26disable_promiscuous_decodes%3Dtrue\" style=\"background-color:#262626; border-radius:2px; color:#ffffff; display:inline-block; font-family:'Open Sans',Helvetica,Arial,sans-serif!important; font-size:14px; font-weight:400; line-height:1.5; text-align:center; text-decoration:none; min-width:300px; padding:8px 12px 8px 12px\">View </a></font></div></td></tr></tbody></table></td></tr><tr role=\"presentation\" style=\"padding:0\"><td role=\"presentation\" style=\"padding:20px 30px 20px 30px; background-color:#f6f6f6\"><table cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\"><tbody><tr role=\"presentation\" style=\"padding:0\"><td role=\"presentation\" style=\"text-align:left; padding:0 0 12px 0\"><div style=\"padding:0 0 2px 0\"><font face=\"'Open Sans', Helvetica, Arial, sans-serif\"><span style=\"color:#666666; font-size:12px; font-weight:normal; padding:0\">Email brought to you by </span></font></div><img src=\"https://elearning.utdallas.edu/images/ci/misc/ultra/emails/blackboard-logo.png\" alt=\"Blackboard\" width=\"91\" height=\"13\" style=\"max-width:91px; display:block\"> </td></tr><tr role=\"presentation\" style=\"padding:0\"><td role=\"presentation\" style=\"text-align:left; padding:0\"><div style=\"padding:0 0 2px 0\"><font face=\"'Open Sans', Helvetica, Arial, sans-serif\"><span style=\"color:#262626; font-size:12px; font-weight:normal\">Want to change how you receive these emails? </span></font></div><div style=\"font-size:12px; color:#666666\"><font face=\"'Open Sans', Helvetica, Arial, sans-serif\"><a href=\"https://elearning.utdallas.edu/ultra/redirect?redirectType=ui&amp;screen=email-notifications-settings\" style=\"color:#2073a1\">Manage your notification settings</a> </font></div></td></tr></tbody></table></td></tr></tbody></table></center></td></tr></tbody></table></body></html>"
+            },
+        })
+    
+if __name__ == "__main__":
+    main()
