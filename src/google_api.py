@@ -50,3 +50,6 @@ def add_assignment(homework_list_id, new_task_body):
 
 def update_assignment(homework_list_id, assignment_id, new_task_body):
     return _get_service().tasks().patch(tasklist=homework_list_id, task=assignment_id, body=new_task_body).execute()
+
+def complete_assignment(homework_list_id, assignment_id):
+    return _get_service().tasks().patch(tasklist=homework_list_id, task=assignment_id, body={"status": "completed"}).execute()
