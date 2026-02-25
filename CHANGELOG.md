@@ -1,4 +1,4 @@
-## Changelog (2026-02-24)
+## Changelog (2026-02-25)
 
 ### Features
 - improve changelog formatting
@@ -11,6 +11,8 @@
 - changelog workflow
 
 ### Chores
+- update readme
+- update changelog [ci skip]
 - workflow and changelog
 - enforce conventional commits
 - gitignore
