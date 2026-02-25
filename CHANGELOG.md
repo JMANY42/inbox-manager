@@ -7,12 +7,13 @@
 - google api integration
 
 ### Bug Fixes
+- **changelog script**: no longer includes ci commits in the changelog
 - changelog workflow not pushing new changelog
 - changelog workflow
 
 ### Chores
 - update readme
-- update changelog [ci skip]
+- update readme
 - workflow and changelog
 - enforce conventional commits
 - gitignore
