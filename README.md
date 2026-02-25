@@ -32,3 +32,7 @@ Download the enitre inbox every x minutes and sort emails locally. Not sure how 
 ## Updated Plan
 
 I think I'm going to stick with option 1 and simulate human inputs. This definently is violating some terms of agreement but I don't really care about that. Hopefully captcha isn't too much of an issue. The underlying sorting and rules will be the same, this just makes getting each email a million times harder.  
+
+## Update 2
+
+I can get a valid access token through the microsoft graph explorer. From what I can tell, I can use this token anywhere (it works in postman) and it expires after 24 hours. So the only thing I need to make a web automation for is getting that token and only run it once a day. This is definently the best way forward. 
