@@ -10,7 +10,6 @@ fi
 
 regex='^(feat|fix|docs|style|refactor|test|chore)(\(([^)]+)\))?: (.+)'
 
-# Declare commit type arrays
 features=()
 fixes=()
 docs=()
@@ -19,8 +18,13 @@ refactor=()
 test=()
 chore=()
 
-# Use process substitution to avoid subshell
 while read -r line; do
+
+  # 🔹 Skip automatic changelog update commits and any ci commit
+if [[ "$line" =~ \[ci\ skip\] ]]; then
+    continue
+fi
+
   if [[ "$line" =~ $regex ]]; then
     type="${BASH_REMATCH[1]}"
     scope="${BASH_REMATCH[3]}"
@@ -39,9 +43,9 @@ while read -r line; do
       chore) chore+=("$entry") ;;
     esac
   fi
-done < <(git log $range --pretty=format:"%s")  # <-- process substitution
 
-# Output changelog
+done < <(git log $range --pretty=format:"%s")
+
 echo "## Changelog ($(date +%Y-%m-%d))"
 echo ""
 
