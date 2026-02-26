@@ -15,6 +15,7 @@
 - changelog workflow
 
 ### Chores
+- add requirements.txt
 - update readme
 - update readme
 - workflow and changelog
