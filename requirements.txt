@@ -1,8 +1,7 @@
 html2text
 ollama
-google.auth.transport.requests
-google.oauth2.credentials
-google_auth_oauthlib.flow
-googleapiclient.discovery
-dateutil
-zoneinfo
+google-api-python-client
+python-dateutil
+dotenv
+requests
+google-auth-oauthlib
