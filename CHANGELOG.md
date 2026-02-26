@@ -1,6 +1,7 @@
 ## Changelog (2026-02-26)
 
 ### Features
+- **ollama**: set up ollama prompt and integration
 - **outlook**: get emails from inbox
 - improve changelog formatting
 - mark assignment completed
