@@ -62,8 +62,8 @@ def get_api_ids(title):
 def extract_info(message):
     text = html2text.html2text(message)
     # Extract class number (the 4-digit course number after CS-)
-    class_match = re.search(r'CS-(\d{4})-', text)
-    class_number = 'CS '+class_match.group(1) if class_match else None
+    class_match = re.search(r'CS(\s|-)\d{4}((\.|-)\d{3})?', text)
+    class_number = class_match.group(0) if class_match else None
 
     # Extract assignment name
     assignment_match = re.search(r'^(?:\|\s+(?!\|)|Title:\s+)(.+)', text, re.MULTILINE)
@@ -74,7 +74,7 @@ def extract_info(message):
     due_date = due_match.group(1).strip() if due_match else None
 
     if not (class_number and assignment_name and (due_date or "submission" in text)):
-        sys.exit(f'ERROR: Error extracting information\n\tClass Number: ${class_number}\n\tAssignment Name: ${assignment_name}\n\tDue Date: ${due_date}')
+        sys.exit(f'ERROR: Error extracting information\n\tClass Number: ${class_number}\n\tAssignment Name: ${assignment_name}\n\tDue Date: ${due_date}\n\tText:{text}')
     
     return class_number, assignment_name, due_date
 
