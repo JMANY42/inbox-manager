@@ -17,7 +17,6 @@ def get_all_outlook_messages(access_token: str, user_id: str = "me", **kwargs) -
         "Authorization": f"Bearer {access_token}",
         "Content-Type": "application/json",
     })
-
     params = {"$top": kwargs.get("top", 100)}
     if "select" in kwargs:
         params["$select"] = kwargs["select"]
@@ -35,5 +34,4 @@ def get_all_outlook_messages(access_token: str, user_id: str = "me", **kwargs) -
         data = response.json()
         all_messages.extend(data.get("value", []))
         url = data.get("@odata.nextLink")
-
     return all_messages

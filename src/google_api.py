@@ -45,10 +45,13 @@ def get_assignment_list(homework_list_id):
     return _get_service().tasks().list(tasklist=homework_list_id).execute().get("items", [])
 
 def add_assignment(homework_list_id, new_task_body):
+    print(f"adding assignment to task list\t\ttitle: {new_task_body["title"]}")
     return _get_service().tasks().insert(tasklist=homework_list_id, body=new_task_body).execute()
 
 def update_assignment(homework_list_id, assignment_id, new_task_body):
+    print(f"updating assignment in task list\t\ttitle: {new_task_body["title"]}")
     return _get_service().tasks().patch(tasklist=homework_list_id, task=assignment_id, body=new_task_body).execute()
 
 def complete_assignment(homework_list_id, assignment_id):
+    print(f"completing assignment in task list\t\ttitle: {new_task_body["title"]}")
     return _get_service().tasks().patch(tasklist=homework_list_id, task=assignment_id, body={"status": "completed"}).execute()

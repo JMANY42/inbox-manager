@@ -21,9 +21,12 @@ def preliminary_sort(message):
 
 
 def main():
+    print("starting email fetch...")
     messages = get_emails()
+    print("successfully fetched emails!")
     for email in messages:
         preliminary_sort(email)
+        pass
         
     
 if __name__ == "__main__":
