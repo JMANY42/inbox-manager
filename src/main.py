@@ -1,5 +1,7 @@
 from elearning import assignment_due_soon, assignment_submitted
 from outlook import get_emails
+from general_email import handle_general_email
+
 def preliminary_sort(message):
     subject = message["subject"]
     from_email = message["from"]["emailAddress"]["address"]
@@ -15,7 +17,7 @@ def preliminary_sort(message):
         pass # NOT SURE WHAT TO DO MAYBE JUST FLAG AS IMPORTANT
     
     else:
-        pass # GENERAL CASE EMAIL
+        handle_general_email(message)
 
 
 def main():
